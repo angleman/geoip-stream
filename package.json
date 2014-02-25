@@ -1,6 +1,6 @@
 {
   "name": "geoip-stream",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Maxmind GeoIP Stream",
   "main": "index.js",
   "scripts": {
