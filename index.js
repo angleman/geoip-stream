@@ -30,7 +30,7 @@ var maxmind = require('maxmind')  // runk/node-maxmind
 			var ip = parsed[config.ipField];
 			if (ip) { // ip field found
 				if (config.dropIpField) {
-					delete parsed[config.ipField]);
+					delete parsed[config.ipField];
 				}
 				var location = maxmind.getLocation(ip);
 				if (location) {
