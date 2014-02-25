@@ -13,7 +13,8 @@ var maxmind = require('maxmind')  // runk/node-maxmind
 		dataPath:        './GeoLiteCity.dat',
 		memoryCache:     true, 
 		checkForUpdates: true,
-		ipField:         'ip'
+		ipField:         'ip',
+		dropIpField:     false
 	 }
  
 	 config = (config) ? conflate(defaults, config) : defaults;
@@ -28,6 +29,9 @@ var maxmind = require('maxmind')  // runk/node-maxmind
 			var parsed = JSON.parse(json);
 			var ip = parsed[config.ipField];
 			if (ip) { // ip field found
+				if (config.dropIpField) {
+					delete parsed[config.ipField]);
+				}
 				var location = maxmind.getLocation(ip);
 				if (location) {
 					parsed = conflate(parsed, location);

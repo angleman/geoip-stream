@@ -1,6 +1,6 @@
 # geoip-stream
 
-Maxmind GeoIP Stream. Transforms a JSON string stream of objects by looking for an ```ip``` field (as defined) and appending maxmind data to the stream if found. Uses readable-stream for node < 0.10
+Maxmind GeoIP Stream. Transforms a JSON string stream of objects by looking for an ```ip``` field (as defined) and appending maxmind data to the stream if it is found. Uses readable-stream for node < 0.10 to ensure stream2+ sanity.
 
 
 ## Install
@@ -29,14 +29,16 @@ var geoip       = new geoipStream({
 	dataPath:        './GeoLiteCity.dat', // default
 	memoryCache:     true,                // default
 	checkForUpdates: true,                // default
-	ipField:         'ip'                 // default
+	ipField:         'ip',                // default
+	dropIpField:     true                 // default is false
 });
 
 logstream
 .pipe(split)
 .pipe(geoip)
-.pipe(process.stdout) // { "ip": ..., "countryCode": "US", "city":"Dallas", ...}
+.pipe(process.stdout) // { "timestamp": ..., "countryCode": "US", "city":"Dallas", ...}
 ```
 
+## License 
 
-## License MIT
+### MIT
