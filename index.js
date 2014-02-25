@@ -10,7 +10,7 @@ var maxmind = require('maxmind')  // runk/node-maxmind
 	 var self = this;
  
 	 var defaults = {
-		dataPath:        './GeoIPCity.dat',
+		dataPath:        './GeoLiteCity.dat',
 		memoryCache:     true, 
 		checkForUpdates: true,
 		ipField:         'ip'
