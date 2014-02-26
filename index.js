@@ -1,7 +1,7 @@
 var maxmind = require('maxmind')  // runk/node-maxmind
 , conflate  = require('conflate') // Munge some objects together, deep by default. kommander/conflate.js
 , util      = require('util')
-, stream     = require('stream').Transform || require('readable-stream').Transform // stream 2 compatible
+, stream    = require('stream').Transform || require('readable-stream').Transform // stream 2 compatible
 ; 
  
  
