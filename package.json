@@ -15,6 +15,13 @@
   ],
   "author": "angleman",
   "license": "MIT",
+  "repository" : { 
+	"type" : "git",
+    "url" : "http://github.com/angleman/geoip-stream.git"
+  },
+  "bugs": { 
+	  "url" : "http://github.com/owner/project/issues"
+  },
   "dependencies": {
     "readable-stream": "~1.0.26",
     "conflate": "~1.1.0",
